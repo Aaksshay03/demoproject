@@ -1,0 +1,65 @@
+<html>
+
+<head>
+    <title>View ERP</title>
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        table {
+            font-size: 15px;
+            border-color: tomato;
+            align-items: center;
+            justify-content: center;
+        }
+
+        tr {
+            border-color: tomato;
+            justify-content: center;
+            align-items: center;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <h1>View details</h1>
+        <br>
+    </div>
+    <div id="view">
+        <table>
+            <tr>
+                <th>Study ID</th>
+                <th>Study Name</th>
+                <th>Study Phase</th>
+                <th>Sponsor Name</th>
+                <th>Study Description</th>
+                
+            </tr>
+            <tr>
+                <td>{{data.id}}</td>
+                <td>{{data.name}}</td>
+                <td>{{data.phase}}</td>
+                <td>{{data.sponsor_name}}</td>
+                <td>{{data.description}}</td>
+            </tr>
+        </table>
+    </div>
+    <div>
+        <a href="{%url 'welcome'%}"><button>Cancel</button></a>
+    </div>
+</body>
+
+</html>
