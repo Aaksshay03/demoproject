@@ -1,0 +1,66 @@
+<html>
+
+<head>
+    <title>Student ERP</title>
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        table {
+            font-size: 15px;
+            border-color: tomato;
+            align-items: center;
+            justify-content: center;
+        }
+
+        tr {
+            border-color: tomato;
+            justify-content: center;
+            align-items: center;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <h1>Study Management</h1>
+        <br>
+    </div>
+    <div id="view">
+        <table>
+            <tr>
+                <th>Study ID</th>
+                <th>Study Name</th>
+                <th>Study Phase</th>
+                <th>Sponsor Name</th>
+                <th>Study Description</th>
+                <th colspan="2"></th>
+                
+            </tr>
+            {%for item in data%}
+            <tr>
+                <td>{{item.id}}</td>
+                <td>{{item.name}}</td>
+                <td>{{item.description}}</td>
+                <td>{{item.phase}}</td>
+                <td>{{item.sponsor_name}}</td>
+                <td><a href="{%url 'view_detail' item.id%}"><button>View</button></a></td>
+                <td><a href="{%url 'edit_detail' item.id%}"><button>Edit</button></a></td>
+            </tr>
+            {%endfor%}
+        </table>
+    </div>
+</body>
+
+</html>

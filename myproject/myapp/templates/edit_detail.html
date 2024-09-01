@@ -1,0 +1,79 @@
+<html>
+
+<head>
+    <title>View ERP</title>
+    <style>
+        div {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+
+        table {
+            font-size: 15px;
+            border-color: tomato;
+            align-items: center;
+            justify-content: center;
+        }
+
+        tr {
+            border-color: tomato;
+            justify-content: center;
+            align-items: center;
+        }
+
+        th,
+        td {
+            padding: 8px;
+            text-align: center;
+            border: 1px solid tomato;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="title">
+        <h1>View details</h1>
+        <br>
+    </div>
+    <div id="view">
+        <form id="myform" action="{%url 'update' data.id%}" method="post" enctype="multipart/form-data">
+            {%csrf_token%}
+            <table>
+                <tr>
+                    <th>Study ID</th>
+                    <td>{{data.id}}</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th>Study Name</th>
+                    <td>{{data.name}}</td>
+                    <td><label for="name">Update:</label><input type="text" id="name" name="name"></td>
+                </tr>
+                <tr>
+                    <th>Study Description</th>
+                    <td>{{data.description}}</td>
+                    <td><label for="description">Update:</label><input type="text" id="description" name="description"></td>
+                </tr>
+                <tr>
+                    <th>Study Phase</th>
+                    <td>{{data.phase}}</td>
+                    <td><label for="phase">Update:</label><input type="text" id="phase" name="phase"></td>
+                </tr>
+                <tr>
+                    <th>Sponsor name</th>
+                    <td>{{data.sponsor_name}}</td>
+                    <td><label for="sponsor_name">Update:</label><input type="text" id="sponsor_name" name="sponsor_name"></td>
+                </tr>
+            </table>
+    </div>
+    <div>
+        <button type="submit">Update</button>
+        <a href="{%url 'welcome'%}"><button>Cancel</button></a>
+    </div>
+</form>
+</body>
+
+</html>
